@@ -1,0 +1,101 @@
+html {
+  box-sizing: border-box
+}
+
+/* The Universal Selector */
+*, /* All elements*/
+*::before, /* All ::before pseudo-elements */
+*::after { /* All ::after pseudo-elements */
+  /* height & width will now include border & padding by default
+     but can be over-ridden as needed */
+  box-sizing: inherit;
+}
+
+/* resets font size to be 62.5% of the user preference - 
+   in most browser configurations this will be 10px */
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(0, 128, 107);
+/* Use a system font, if none are available use an available sans-sarif   font */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: grid;
+  height: 100px;
+  width: 500px;
+  grid-template-columns: 40% 60%;
+}
+
+#left-side {
+  display: grid;
+  grid-template-rows: 80% 20%;
+}
+
+#right-side {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 0 0 0 20px;
+  font-size: 10px;
+}
+
+#brand {
+  text-align: left;
+  line-height: 2;
+  border-left: 2px solid green;
+  padding: 0 0 0 10px;
+}
+
+#offer {
+
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  color: rgba(128, 128, 128, 0.528);
+}
+
+img {
+  height: 75px;
+  width: 75px;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px solid green
+}
+
+#contact {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 47px;
+}
+
+#phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 128, 68);
+}
+
+#message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(12, 143, 80);
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 30px;
+  }
+}
+
